@@ -1,0 +1,57 @@
+{
+    "name": "jwt-auth-advance",
+    "version": "1.0.0",
+    "description": "Node Advance Authentication with JWT",
+    "main": "dist/server.js",
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint \"src/**/*.ts\"",
+        "lint:fix": "eslint \"src/**/*.ts\" --fix",
+        "format": "prettier --write \"src/**/*.ts\" --config .prettierrc",
+        "dev": "concurrently \"tsc -w\" \"node --watch dist/server.js\"",
+        "docker:mongodb": "docker run -p 27017:27017 -v test_mongodb_volume:/data/db -d mongo:4.4-focal",
+        "make:cert": "openssl req -x509 -newkey rsa:4096 -keyout cert/key.pem -out cert/cert.pem -sha256 -days 365 -nodes"
+    },
+    "keywords": [
+        "node",
+        "jwt",
+        "authentication",
+        "typescript"
+    ],
+    "author": "Vagif R.",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cookie-parser": "^1.4.6",
+        "cookie-session": "^2.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "helmet": "^7.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.0.3",
+        "passport": "^0.5.3",
+        "passport-google-oauth20": "^2.0.0",
+        "uuid": "^9.0.1",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "@types/cookie-parser": "^1.4.6",
+        "@types/cookie-session": "^2.0.48",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/jsonwebtoken": "^9.0.5",
+        "@types/mongoose": "^5.11.97",
+        "@types/node": "^20.10.4",
+        "@types/passport": "^1.0.16",
+        "@types/passport-google-oauth20": "^2.0.14",
+        "@types/uuid": "^9.0.7",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "concurrently": "^8.2.2",
+        "eslint": "^8.56.0",
+        "prettier": "^3.1.1",
+        "typescript": "^5.3.3"
+    }
+}
