@@ -10,8 +10,7 @@
         "format": "prettier --write \"src/**/*.ts\" --config .prettierrc",
         "dev": "concurrently \"tsc -w\" \"node --watch dist/server.js\"",
         "prod": "node dist/server.js",
-        "docker:mongodb": "docker run -p 27017:27017 -v test_mongodb_volume:/data/db -d mongo:4.4-focal",
-        "make:cert": "openssl req -x509 -newkey rsa:4096 -keyout cert/key.pem -out cert/cert.pem -sha256 -days 365 -nodes"
+        "docker:mongodb": "docker run -p 27017:27017 -v test_mongodb_volume:/data/db -d mongo:4.4-focal"
     },
     "keywords": [
         "node",
