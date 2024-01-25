@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+    api:
+        container_name: node_advance_auth_api
+        build:
+            context: .
+            target: development
+            dockerfile: Dockerfile
+        ports:
+            - 8080:3000
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules # Ignore sync from host to container
+        env_file: .env
