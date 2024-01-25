@@ -13,3 +13,15 @@ services:
             - .:/usr/src/app
             - /usr/src/app/node_modules # Ignore sync from host to container
         env_file: .env
+
+    db:
+        container_name: node_advance_auth_api_db
+        image: mongo:4.4-focal
+        ports:
+            - 27017:27017
+        volumes:
+            - mongo_data:/data/db
+        restart: always
+
+volumes:
+    mongo_data:
